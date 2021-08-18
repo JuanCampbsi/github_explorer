@@ -13,24 +13,30 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js', '.jsx'],
-    },    
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'public', 'index.html')
         })
     ],
-    
+
     devServer: {
         contentBase: path.resolve(__dirname, 'public')
     },
-    
-    
+
+
     module: {
         rules: [
             {
                 test: /\.jsx$/,
                 exclude: /node_modules/,
                 use: 'babel-loader',
+
+            },
+            {
+                test: /\.css$/,
+                exclude: /node_modules/,
+                use: ['style-loader', 'css-loader'],
 
             }
         ],

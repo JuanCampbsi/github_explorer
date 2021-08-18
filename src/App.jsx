@@ -1,3 +1,5 @@
 export function App(){
-    return <h1>Hello Trail ReactJs</h1>
+    throw new Error('teste error')
+
+    return <h1>Hello  ReactJs</h1>
 }
